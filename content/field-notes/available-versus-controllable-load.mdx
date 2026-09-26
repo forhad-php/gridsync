@@ -1,0 +1,81 @@
+A site survey lists a 400 kW chiller, 250 kW of air handling, a 300 kW bank of EV chargers and 120 kW of lighting. It is tempting to add these up and call the total the site's flexibility. It is not. Nameplate capacity says what equipment could draw. Flexibility is how much of what it actually draws, at a particular time, can be moved without breaking something that matters—and how much of that can actually be instructed today.
+
+The gap between those numbers is often large. Understanding it is what turns an optimistic estimate into a commitment an operator can keep.
+
+<Figure id="Diagram · qualitative" caption="From nameplate to commitment. Each step removes load for a different reason.">
+  <LoadFunnel />
+</Figure>
+
+## Step 1: from nameplate to typical load
+
+Equipment rarely runs at its rated power. A chiller sized for the hottest day of the decade spends most of its life at part load. EV chargers deliver what the vehicles will accept. Lighting may already be dimmed or switched by occupancy sensors.
+
+The starting point for flexibility is therefore the load the equipment typically draws during the window in question, on a comparable day. That comes from interval metering or, better, submetering—not from the plant schedule.
+
+## Step 2: from typical load to movable load
+
+Not all of the load that is running can be moved. Some of it is protecting something:
+
+- **Comfort.** Cooling that keeps occupied zones inside their agreed band.
+- **Product.** Refrigeration that keeps stock inside its temperature specification.
+- **Process.** Loads that a production schedule depends on.
+- **Deadlines.** Charging that vehicles need before departure.
+- **Safety.** Ventilation, smoke control, and anything on a life-safety circuit.
+
+What remains is the load that could move within those limits. For thermal loads it also depends on duration: a zone may tolerate a reduction for thirty minutes but not for two hours.
+
+<PullQuote>A 400 kW chiller is not 400 kW of flexibility. On a typical afternoon, it may not be 400 kW of anything.</PullQuote>
+
+## Step 3: from movable to controllable today
+
+Load that could move in principle may not be controllable in practice, today. The usual reasons are mundane:
+
+- The BMS point that would change the setpoint is read-only, or has not been mapped.
+- The equipment is in manual, under maintenance, or reporting a fault.
+- The charge-point management system does not accept external power limits, or its integration is offline.
+- The site has not agreed that this equipment may participate.
+
+Controllable load is the part that is movable, writable, healthy and permitted. It changes from day to day, which is why it has to be checked before each event rather than assumed from a survey.
+
+<TechNote title="Controllability checklist, per asset">
+  <ul>
+    <li>Is there a writable point or interface for the change we need?</li>
+    <li>Does an override expire automatically, and what is the fallback?</li>
+    <li>Is the equipment healthy and in automatic mode?</li>
+    <li>Has the site agreed this asset may participate, and under what limits?</li>
+    <li>Can we observe its response at a useful interval?</li>
+  </ul>
+</TechNote>
+
+## Step 4: from controllable to committed
+
+The final step is a judgement about confidence. The estimate of controllable load is still an estimate: the weather may differ from the forecast, occupancy may change, a unit may trip. The amount committed to a programme should reflect that uncertainty and the consequences of under-delivery.
+
+Some operators commit the estimate minus a fixed margin; others commit a level they expect to meet on, say, nine events out of ten. The right approach depends on the programme's rules and the site's appetite for risk. What matters is that the margin is deliberate and recorded, not hidden inside an optimistic number.
+
+## Different assets, different funnels
+
+The funnel looks different for each kind of load.
+
+<SimpleTable
+  caption="Where load is usually lost at each step, by asset type."
+  head={["Asset", "Limits typical load", "Limits movable load", "Limits control"]}
+  rows={[
+    ["Chillers and AHUs", "Weather and part-load operation", "Comfort band, ventilation", "Writable setpoints, plant health"],
+    ["Lighting", "Existing dimming and occupancy control", "Minimum illuminance, safety lighting", "Zone mapping, controller access"],
+    ["EV charging", "Vehicles connected and their state of charge", "Departure deadlines, priorities", "Charge-point system integration"],
+    ["Refrigeration", "Door openings, stock loading", "Product temperature limit, defrost", "Controller access, alarms"],
+    ["Batteries", "Current state of charge", "Reserve requirement, other services", "Inverter or EMS interface"],
+  ]}
+/>
+
+## Why the distinction matters
+
+Clear language protects everyone. If a site says it has "1 MW of flexibility" and means nameplate, it will disappoint the programme. If it means controllable load on a typical day with a confidence margin, it will usually deliver—and it will be able to explain the difference when it does not.
+
+<Disclaimer>Illustrative example. Equipment sizes in this note are examples used to explain the method; they are not from a specific site.</Disclaimer>
+
+## Further reading
+
+- [Why data quality matters more than another dashboard](/field-notes/data-quality-before-dashboards)
+- [A building is not a battery](/field-notes/a-building-is-not-a-battery)

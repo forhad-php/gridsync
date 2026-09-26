@@ -1,0 +1,71 @@
+When a building's energy picture looks unclear, the usual response is another dashboard. More charts, more colours, a new portal. In our experience the underlying problem is more often the data feeding those charts: intervals that are missing, points that stopped updating months ago, meters that are labelled as one thing and measure another.
+
+For everyday reporting, these problems are tolerable. For flexibility, they are not. A flexibility estimate is built on the building's recent behaviour. If that behaviour is recorded incorrectly, the estimate inherits the error, and so does every commitment made from it.
+
+## Four problems that matter
+
+<Figure id="Diagram" caption="An interval series with a gap and a stale point. Both are easy to miss on a daily chart and both distort a baseline.">
+  <IntervalGaps />
+</Figure>
+
+### Missing intervals
+
+Loggers restart, gateways lose connection, and portals occasionally fail to import a day. A few missing intervals are normal. The question is what happens to them. Some systems fill gaps silently by interpolation or by copying the previous value; some drop the day; some show zero. Each choice changes averages and peaks in a different way.
+
+### Stale points
+
+A BMS point that has stopped updating often continues to report its last value. On a chart it looks like a flat line, which can be mistaken for a stable process. A zone temperature that has read 22.0 °C for three weeks is almost certainly not a zone temperature any more.
+
+### Mislabelled or misassigned meters
+
+Submeters are frequently installed, replaced or rewired over a building's life, and the documentation does not always keep up. A meter labelled "Level 3 lighting" may now measure small power for two floors. For a flexibility plan, this is the difference between a load that can be dimmed and one that cannot.
+
+### Latency
+
+Data that arrives a day later is fine for monthly reports and useless for monitoring an event. It is also important to know the latency of each source when assessing performance: an interval meter read once a day cannot tell an operator, during the event, that a zone has stepped out.
+
+<PullQuote>A flat line on a chart is not always a stable process. Sometimes it is a sensor that stopped reporting.</PullQuote>
+
+## What good looks like
+
+Data quality does not need to be perfect. It needs to be visible, so that decisions can take it into account.
+
+- **Every value carries a quality flag.** Measured, estimated, filled, stale, missing. Filled values are marked as filled, and the method is recorded.
+- **Staleness is detected automatically.** A point whose value has not changed within a plausible period is flagged, with the period set per point type.
+- **Meters are reconciled.** Submeters are periodically compared with the main meter. Large unexplained residuals point to mislabelled or missing meters.
+- **Latency is known per source.** The operating model knows which data can be used during an event and which only afterwards.
+- **Quality affects confidence.** A forecast built on a week with missing data should say so, and its confidence should reflect it.
+
+<TechNote title="A quick reconciliation check">
+  <p>For a recent week, add up the interval energy from all submeters that sit under the main incomer and compare it with the main meter over the same intervals.</p>
+  <ul>
+    <li>A small, steady difference is normal (unmetered loads, losses).</li>
+    <li>A difference that changes sharply at a particular date usually means a meter was replaced, rewired or re-scaled.</li>
+    <li>A difference that follows the working day suggests an unmetered load with a schedule—often worth finding.</li>
+  </ul>
+</TechNote>
+
+## Why this comes before flexibility
+
+A flexibility estimate typically answers three questions: what the building would have done without intervention, how far that could move within its limits, and how confident the estimate is. The first question is answered from history. If that history contains filled gaps, stale points or mislabelled loads, the answer is wrong in ways that are hard to see from the output alone.
+
+It is also a matter of evidence. When an event is verified, the result depends on the baseline and the metered response. If either contains unflagged problems, the result cannot be defended with confidence—to a tenant, a programme or an auditor.
+
+## Starting small
+
+Data quality work can sound endless. It does not need to be. For a first building, we usually suggest:
+
+1. List the meters and points that a flexibility plan would rely on. It is usually a short list.
+2. For each, record the source, interval, latency and who maintains it.
+3. Look at the last month for gaps and flat lines, and note them.
+4. Reconcile the submeters against the main meter for one week.
+5. Decide which problems need fixing before an event, and which only need to be flagged.
+
+This is less exciting than a new dashboard, and much more useful.
+
+<Disclaimer>Illustrative example. The series in the diagram is drawn to show common problems; it is not data from a specific building.</Disclaimer>
+
+## Further reading
+
+- [The difference between available load and controllable load](/field-notes/available-versus-controllable-load)
+- [How to verify what happened after a grid event](/field-notes/verifying-a-grid-event)

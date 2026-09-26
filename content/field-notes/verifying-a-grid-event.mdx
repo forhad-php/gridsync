@@ -1,0 +1,72 @@
+Six months after a demand-response event, someone will ask what happened. It might be the programme operator reconciling payments, an auditor checking a sustainability report, a tenant asking why a room was warm, or your own team deciding whether to take part again next season. Verification is the work that makes the answer possible.
+
+It is tempting to think of verification as a single number: the reduction delivered. That number matters, but on its own it cannot be explained or defended. Useful verification keeps the number together with the context that produced it.
+
+## Three lines on one chart
+
+Every event can be described with three lines.
+
+- **The baseline** — an estimate of what the building would have used without the event.
+- **The plan** — what the approved response intended to achieve, asset by asset.
+- **The observed load** — what the meters recorded.
+
+<Figure id="Diagram · illustrative" caption="Baseline, plan and observed load. The response met the plan in the first hour and drifted in the second; the shaded area is the deviation.">
+  <BaselineDeviation />
+</Figure>
+
+The difference between baseline and observed is the measured response. The difference between plan and observed is the deviation. Both need explaining.
+
+## Choosing and recording the baseline
+
+The baseline is an estimate, and its method has a large effect on the result. Programmes commonly specify the method: for example, an average of the same intervals on a number of recent similar days, sometimes with an adjustment based on the hours immediately before the event. Other approaches use regression models that account for temperature and occupancy.
+
+Whatever the method, record it precisely: which days were included and excluded, which adjustment was applied, and what data it was calculated from. If the site calculates its own baseline for internal purposes, it is worth calculating the programme's baseline as well, so that differences can be understood rather than argued about.
+
+<TechNote title="Baseline pitfalls">
+  <ul>
+    <li><strong>Unusual days in the lookback.</strong> Holidays, shutdowns or previous events can distort an average. Most methods exclude them; check yours does.</li>
+    <li><strong>Morning adjustments.</strong> If the baseline is adjusted using the hours before the event, pre-cooling in those hours can raise or lower it.</li>
+    <li><strong>Data gaps.</strong> Filled or estimated intervals in the baseline days should be flagged.</li>
+  </ul>
+</TechNote>
+
+## Explaining deviation
+
+A deviation is not automatically a failure. The question is whether it can be explained and whether it was the right thing to happen. Common explanations include:
+
+- A zone reached its comfort limit and was released as designed.
+- The weather was hotter than forecast, so thermal load was higher.
+- An asset did not respond—a point was not writable, or equipment was in manual.
+- Occupancy changed after approval.
+- A measurement issue: missing intervals or a mislabelled submeter.
+
+The first two are the plan working as intended in real conditions. The third and fourth are operational lessons. The last is a data problem that must be resolved before the result is trusted.
+
+<PullQuote>A deviation that can be explained is information. A deviation that cannot be explained is a risk.</PullQuote>
+
+## What the record should contain
+
+A verification record that will still make sense in six months contains more than meter data.
+
+1. **The signal** — programme, event identifier, window, target, notice time.
+2. **Conditions** — weather, occupancy, maintenance state and any exclusions at the time of approval.
+3. **The plan** — asset by asset, with limits, stop conditions and the version that was approved.
+4. **Decisions** — who approved, when, and any changes made during the event, with reasons.
+5. **Measurements** — interval data for the site and participating assets, with quality flags.
+6. **Calculation** — baseline method, inputs, and the resulting measured response.
+7. **Notes** — anything learned, written soon after the event.
+
+Most of this is created naturally during the event if the operating tools keep it. Reconstructing it afterwards from emails and exports is slow and rarely complete.
+
+## Using verification to improve the next event
+
+The most valuable use of verification is internal. Comparing plan and observed response over a series of events shows where estimates are consistently optimistic, which zones drift faster than expected, and which assets are unreliable. Those lessons feed directly into the next forecast and make future commitments more accurate.
+
+It also builds trust between facility and energy teams. When a result can be traced back to specific conditions and decisions, conversations move from "why didn't the building deliver?" to "what should we change next time?"
+
+<Disclaimer>Illustrative example. The chart shows the shape of a typical deviation; baseline methods and settlement rules vary by programme and should be taken from the programme's own documentation.</Disclaimer>
+
+## Further reading
+
+- [Why data quality matters more than another dashboard](/field-notes/data-quality-before-dashboards)
+- [What operators need to know before a demand-response event](/field-notes/before-a-demand-response-event)

@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --nav-h: 5rem;
+  }
+  html {
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+  body {
+    @apply bg-paper font-sans text-[17px] leading-[1.6] text-ink antialiased sm:text-[18px];
+  }
+  h1, h2, h3, h4 {
+    @apply font-sans font-medium text-forest;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  ::selection { background: #c7d2c0; color: #17221f; }
+
+  /* One visible focus style everywhere: 2px copper ring offset from the element. */
+  :focus-visible {
+    outline: 2px solid #9a5530;
+    outline-offset: 3px;
+  }
+  .on-ink :focus-visible { outline-color: #d08a5e; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Technical label: mono, small, sentence case. */
+  .label {
+    @apply font-mono text-label text-mineral-ink;
+  }
+  .on-ink .label { @apply text-mineral-light; }
+
+  .kicker {
+    @apply flex items-baseline gap-3 font-mono text-label text-mineral-ink;
+  }
+  .kicker > .num { @apply text-copper-ink; }
+  .on-ink .kicker { @apply text-mineral-light; }
+  .on-ink .kicker > .num { @apply text-copper-light; }
+
+  .h-display { @apply text-display-1 font-medium text-forest; }
+  .h-section { @apply text-display-2 font-medium text-forest; }
+  .h-sub { @apply text-display-3 font-medium text-forest; }
+  .on-ink .h-display, .on-ink .h-section, .on-ink .h-sub, .on-ink h2, .on-ink h3 { @apply text-paper; }
+
+  .lead { @apply text-lead text-forest/90; }
+  .on-ink .lead { @apply text-stone; }
+  .muted { @apply text-mineral-ink; }
+  .on-ink .muted { @apply text-mineral-light; }
+
+  .serif-statement {
+    @apply font-serif text-[clamp(1.6rem,1.6vw+1rem,2.4rem)] font-normal leading-[1.28] tracking-[-0.01em] text-forest;
+  }
+  .on-ink .serif-statement { @apply text-paper; }
+
+  .rule { @apply border-t border-forest/15; }
+  .on-ink .rule { @apply border-paper/15; }
+
+  .link {
+    @apply text-copper-ink underline decoration-copper/40 decoration-1 underline-offset-[5px] transition-colors hover:decoration-copper-ink;
+  }
+  .on-ink .link { @apply text-copper-light decoration-copper-light/40 hover:decoration-copper-light; }
+
+  .btn {
+    @apply inline-flex min-h-[2.875rem] items-center justify-center gap-2.5 rounded-[3px] px-5 text-[15px] font-medium transition-colors duration-200 ease-instrument disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary { @apply btn bg-copper-ink text-paper-white hover:bg-[#84482a]; }
+  .btn-secondary { @apply btn border border-forest/30 text-forest hover:border-forest hover:bg-forest/[0.04]; }
+  .on-ink .btn-secondary { @apply border-paper/30 text-paper hover:border-paper hover:bg-paper/[0.06]; }
+  .btn-text {
+    @apply inline-flex items-center gap-2 text-[15px] font-medium text-forest underline decoration-forest/25 underline-offset-[6px] transition-colors hover:decoration-forest;
+  }
+  .on-ink .btn-text { @apply text-paper decoration-paper/30 hover:decoration-paper; }
+
+  /* Faint drafting grid for diagram surfaces. */
+  .drafting {
+    background-image:
+      linear-gradient(to right, rgba(36, 51, 46, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(36, 51, 46, 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .drafting-ink {
+    background-image:
+      linear-gradient(to right, rgba(243, 240, 232, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(243, 240, 232, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Form controls */
+  .field {
+    @apply mt-2 block w-full rounded-[3px] border border-forest/25 bg-paper-white px-3.5 py-3 text-[16px] text-ink placeholder:text-mineral transition-colors focus:border-forest focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+  .field[aria-invalid="true"] { @apply border-[#9b2c1f]; }
+  .field-label { @apply block text-[15px] font-medium text-forest; }
+  .field-hint { @apply mt-1.5 text-[14px] text-mineral-ink; }
+  .field-error { @apply mt-1.5 flex items-start gap-1.5 text-[14px] text-[#9b2c1f]; }
+}
+
+@layer utilities {
+  .tabular { font-variant-numeric: tabular-nums; }
+}

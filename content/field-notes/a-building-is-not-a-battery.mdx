@@ -1,0 +1,70 @@
+<AudioNote id="AUD-02" />
+
+Flexibility markets were largely designed around assets that behave predictably. A battery has a rated power, a usable energy and a state of charge. Ask it for 500 kW for two hours and, provided it has the energy, it delivers 500 kW for two hours and then stops. The maths is simple enough to fit on a whiteboard, and that simplicity is why so much of the language of demand response still assumes that every asset behaves the same way.
+
+Buildings are different. They can provide genuine, useful flexibility—often more than their owners expect—but the shape of that flexibility is not a rectangle. Planning as if it were produces commitments that operators cannot keep, or can only keep by making the building uncomfortable for the people in it.
+
+## Where a building's flexibility actually comes from
+
+Most of the movable load in a commercial building is thermal. Chillers, heat pumps, air-handling units and pumps are working to hold spaces inside a temperature range. When cooling is reduced during a hot afternoon, the energy is not stored anywhere tidy. The heat that the plant would have removed stays in the air, the furniture, the ceiling void and the concrete. Temperatures rise, slowly at first and then faster, until the space reaches the edge of what its occupants will accept.
+
+That is the first difference from a battery: the "storage" is the building fabric, and it leaks. How much it can absorb depends on the weather, the orientation of each zone, how many people are in it, and how the spaces were conditioned in the hours before.
+
+<Figure id="Diagram · qualitative" caption="Response over a two-hour event. The building's reduction starts high and tapers; afterwards, load rebounds while spaces recover. Shapes are qualitative.">
+  <ThermalTaper />
+</Figure>
+
+## Three ways buildings behave differently
+
+### The response tapers
+
+In the first minutes after cooling is reduced, the building can shed a large share of its plant load. As zone temperatures climb, some zones approach their upper limit and have to be released. The response curve slopes downwards across the window rather than holding flat. Any plan that promises a constant reduction for the full window is either conservative at the start or optimistic at the end.
+
+### There is a rebound
+
+When the event finishes and the plant returns to normal setpoints, it has to remove the heat that accumulated during the event. Load often rises above what it would otherwise have been, sometimes sharply. If the event was meant to relieve a local network constraint, a badly managed rebound can move the peak rather than remove it. Staggering the recovery across zones and equipment is part of the plan, not an afterthought.
+
+### People decide when to stop
+
+A battery stops when its energy is spent. A building should stop when comfort, safety or operations say so. That boundary is not a single number. A meeting room with twenty people in it warms faster than an empty open-plan floor. A server room, a clinic, a kitchen or a cold store has limits that are not negotiable at all.
+
+<PullQuote>The question is never only how many kilowatts. It is how long, in which zones, and who notices first.</PullQuote>
+
+## What this means for planning an event
+
+Treating buildings as buildings changes a few practical things about how an event is prepared.
+
+1. **Plan by zone, not by building.** A building-level number hides the fact that some zones will reach their limit much earlier than others. Zone-level constraints let the plan release the fast-drifting spaces first and keep the slow ones participating for longer.
+2. **Shape the commitment to the curve.** If the programme allows it, commit a profile rather than a flat figure. If it does not, commit the level the building can hold through the whole window—not the level it can reach in the first ten minutes.
+3. **Prepare the building beforehand.** Pre-cooling during the morning, when it is cheaper and the grid is less stressed, gives the fabric more headroom. It also has to finish before occupancy, and it uses energy, so it belongs in the plan and the evidence.
+4. **Plan the recovery.** Stagger the return to normal setpoints and equipment start-up, and check that the recovery does not create a new peak.
+5. **Write down the stop conditions.** Each zone should have a clear condition that takes it out of the event—a temperature, a CO₂ level, an occupancy trigger—and the operator should know who is authorised to act on it.
+
+<TechNote title="Terms we use">
+  <ul>
+    <li><strong>Comfort band</strong> — the temperature range a zone may occupy while occupied, agreed with the site or tenant.</li>
+    <li><strong>Drift rate</strong> — how quickly a zone's temperature moves once conditioning is reduced; it varies with weather, occupancy and orientation.</li>
+    <li><strong>Rebound</strong> — the extra load after an event as the plant recovers the accumulated heat.</li>
+    <li><strong>Stop condition</strong> — the measurable trigger that removes a zone or asset from an event.</li>
+  </ul>
+</TechNote>
+
+## Batteries still belong in the picture
+
+None of this is an argument against batteries. On sites that have them, a behind-the-meter battery is an excellent partner to thermal flexibility: it can hold a flat response while the building's contribution tapers, and it can absorb part of the rebound. What matters is that the two are modelled with their own rules rather than forced into the same shape.
+
+The same is true of EV charging, refrigeration and process loads. Each has a different relationship with time. A fleet needs a certain amount of energy by a departure time and is otherwise flexible. A cold store has thermal inertia but a hard product-temperature limit. A production line may have no flexibility during a shift and a great deal between shifts. A useful operating model keeps these differences visible instead of averaging them away.
+
+## Explaining the result afterwards
+
+When the event is over, the question will come: did the building deliver? For a battery, a meter reading usually answers it. For a building, the honest answer includes context: how warm it was, which zones participated, which stepped out and why, and how the result compares with the baseline agreed in the programme.
+
+That is why we treat the evidence trail as part of the operation rather than a report written later. If the south-facing zones stepped out forty minutes early because a meeting ran over, that is not a failure to hide—it is the building working as it should, and the record should say so.
+
+<Disclaimer />
+
+## Further reading
+
+- [Thermal flexibility begins with comfort boundaries](/field-notes/thermal-flexibility-comfort-boundaries)
+- [The difference between available load and controllable load](/field-notes/available-versus-controllable-load)
+- [How to verify what happened after a grid event](/field-notes/verifying-a-grid-event)

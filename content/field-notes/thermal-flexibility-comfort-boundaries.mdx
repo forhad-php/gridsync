@@ -1,0 +1,65 @@
+Every conversation about thermal flexibility eventually reaches the same question: how much can the cooling move? It is the wrong place to start. The first question is where each space is allowed to go, and who agreed it. Once that is written down, the kilowatts follow. Without it, every event becomes a negotiation on the day, usually with the person who is least able to say no.
+
+## A comfort boundary is an agreement
+
+In most buildings, the setpoints in the BMS are the product of history: a commissioning engineer's defaults, a complaint three summers ago, a tenant request that was never reversed. They are rarely a statement of what the occupants would actually accept for a couple of hours on a hot afternoon.
+
+A comfort boundary for flexibility is different. It is an explicit range for each zone, for occupied and unoccupied periods, agreed with the people responsible for the space. It has an owner, a date and, ideally, a limit on how often it may be used.
+
+<TechNote title="What a boundary record contains">
+  <ul>
+    <li>Zone and its purpose (open office, meeting room, reception, server room).</li>
+    <li>Occupied and unoccupied ranges, for example 21–24 °C occupied and 18–27 °C unoccupied.</li>
+    <li>Any secondary limits: CO₂, humidity, minimum fresh air.</li>
+    <li>Exclusions: spaces that never participate.</li>
+    <li>Who agreed it, when, and how many events per season it covers.</li>
+  </ul>
+</TechNote>
+
+## Zones drift at different rates
+
+Within the same band, zones behave very differently once conditioning is reduced. A north-facing open office with low occupancy may drift a fraction of a degree over two hours. A south-facing meeting room in the late afternoon, full of people, can reach its upper limit in twenty minutes.
+
+<Figure id="Diagram · illustrative" caption="Two zones in the same comfort band during an event. The south zone reaches its limit early and steps out; the north zone stays inside the band for the full window.">
+  <ComfortBandDrift />
+</Figure>
+
+This is why a building-wide setpoint change is a blunt instrument. It either stops too early, releasing zones that had plenty of headroom, or stops too late, after some spaces have become uncomfortable. Zone-level boundaries let a plan keep the slow-drifting spaces participating while releasing the fast ones as they approach their limit.
+
+## Where the numbers come from
+
+Comfort is partly a matter of standards and partly a matter of expectation. Workplace guidance and the thermal comfort standards used by building designers describe acceptable ranges for different activities and seasons, and most of those ranges are wider than the setpoints buildings actually run at. That gap is where thermal flexibility lives.
+
+But a range that is acceptable on paper is not necessarily acceptable to a particular tenant. The practical approach is:
+
+1. Start from the ranges the site already considers acceptable, not from the widest range a standard would allow.
+2. Agree a slightly wider band for a limited number of events, with the people who occupy the spaces.
+3. Monitor the first few events closely, including feedback from occupants.
+4. Widen or narrow the band based on what actually happened.
+
+<PullQuote>The kilowatts follow from the boundary. Not the other way round.</PullQuote>
+
+## Pre-conditioning uses the boundary too
+
+Pre-cooling before an afternoon event moves zones towards the bottom of their band so they have more room to drift later. It is effective, but it is not free. It uses energy earlier in the day, it must finish before the zone's occupied period begins, and it should not push spaces below their lower limit in the morning. The same boundary record governs both the pre-conditioning and the event.
+
+## Secondary limits matter
+
+Temperature is the most visible limit, but not the only one. Reducing ventilation to save fan energy can let CO₂ rise in occupied spaces; relaxing humidity control can matter in some climates and for some uses. A boundary record that includes these limits, and a plan that respects them, avoids trading one kind of discomfort for another.
+
+<TechNote title="Limits that are never relaxed">
+  <p>Minimum fresh-air rates required for health, smoke-control and life-safety functions, and any process or clinical environment with its own specification. These are not part of the flexible range and should be excluded at the model level, not by the operator on the day.</p>
+</TechNote>
+
+## Making boundaries visible
+
+A boundary that lives in someone's head, or in an email from last year, does not help the operator on the afternoon of an event. It should be visible next to the plan: each participating zone, its band, its current temperature, and how far it is from the edge. When a zone steps out, the record should show which boundary it reached.
+
+This is also what makes an event explainable later. If a tenant asks why their meeting room was warm, the answer is not "we were in a demand-response event". It is: "the room was in a 21–24 °C band agreed on this date; it reached 23.8 °C at 16:40 and was released from the event at that point."
+
+<Disclaimer>Illustrative example. Temperature ranges in this note are examples; appropriate ranges depend on the building, its use, its occupants and applicable standards.</Disclaimer>
+
+## Further reading
+
+- [A building is not a battery](/field-notes/a-building-is-not-a-battery)
+- [What operators need to know before a demand-response event](/field-notes/before-a-demand-response-event)

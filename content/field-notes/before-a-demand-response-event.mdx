@@ -1,0 +1,72 @@
+<AudioNote id="AUD-03" />
+
+Most of the risk in a demand-response event is removed before the event starts. By the time the window opens, the plan either reflects what the building can actually do today, or it does not—and no amount of monitoring during the event fully fixes a plan built on the wrong assumptions.
+
+This note is a practical checklist for facility teams. It is written for sites that take part in utility or aggregator programmes, but most of it applies equally to internal events such as avoiding a demand-charge peak.
+
+<Figure id="Diagram" caption="A typical sequence from event notice to window. Notice periods vary by programme; some events arrive with less than an hour's warning.">
+  <PreEventTimeline />
+</Figure>
+
+## When the notice arrives
+
+Read the programme rules attached to the event, not just the window. Three details matter more than they first appear.
+
+- **The baseline method.** Performance is usually measured against a calculated baseline—an average of recent similar days, sometimes adjusted for the morning of the event. If the morning adjustment exists, unusual activity before the window can change what the event is measured against.
+- **The minimum duration and ramp expectations.** Some programmes expect the reduction to be in place at the start of the window; others allow a ramp. This decides when pre-conditioning must finish and when equipment must be switched.
+- **What counts as non-performance.** Know whether delivering less than the nominated amount is penalised, and whether stepping out early for safety or comfort is treated differently from not responding at all.
+
+## The site review
+
+The site review is where the operating reality is checked against the plan. It should take minutes, not hours, if the information is kept in one place.
+
+### Occupancy for the window
+
+Look at bookings, events and known visitors, not just the default schedule. A training day, a board meeting or a fully booked conference suite changes both the comfort boundaries and the heat gains. Decide in advance which spaces are excluded.
+
+### Maintenance and faults
+
+Equipment that is under maintenance, running in manual, or reporting alarms should not be in the plan. A chiller that has been running with a fault all week is not a reliable source of flexibility, and a controller that has lost communication cannot be relied on to receive instructions or to release them.
+
+### Agreed comfort limits
+
+Check the limits that apply today. Some tenants agree a wider band for a limited number of events per season; some zones have no flexibility at all. The limits should be written down and owned, so that nobody has to renegotiate them on the afternoon of the event.
+
+### What is controllable today
+
+Controllable in principle is not the same as controllable today. Confirm that the points the plan relies on are writable, that overrides will expire at the end of the window, and that there is a defined fallback if communication is lost.
+
+<PullQuote>If I can't explain why a unit is included, it comes out of the plan. That's the rule.</PullQuote>
+
+## Preparing the plan
+
+A good plan lists each participating asset with four things: what will change, by how much, from when to when, and what will stop it. It should also show the combined expected response and how confident that estimate is.
+
+<TechNote title="A plan line, written out">
+  <p>AHU-2, levels 3–4 · supply-air setpoint +1.5 K · 16:00–18:00 · stop if any occupied zone exceeds 24.0 °C or CO₂ exceeds 1,000 ppm · override expires 18:05, fallback to local schedule.</p>
+  <p>Each line should be readable by the person on site without opening another system.</p>
+</TechNote>
+
+Two further checks are worth making before approval:
+
+1. **Recovery.** How will equipment return to normal at the end of the window? A staggered recovery reduces the rebound peak.
+2. **People on site.** Who will be available during the window, and who is authorised to step an asset out early? Write the name down.
+
+## Approval
+
+Approval is a decision, not a formality. The approver should see the plan version they are approving, the exclusions, the confidence of the estimate and the stop conditions. The record should keep who approved, when, and what exactly was approved. If the plan changes after approval—because a meeting was added or a unit tripped—the change should be visible and, depending on the site's rules, re-approved.
+
+## During the window
+
+Monitoring during the event is mostly about stop conditions. Watch the zones and assets closest to their limits, not the building total. If an asset steps out, record why. A clean record of an early step-out is far more useful than a building that met its target by quietly exceeding a comfort limit.
+
+## Afterwards
+
+Within a day, while memories are fresh, note anything that did not go as expected: a zone that drifted faster than forecast, a point that did not respond, a tenant complaint. These notes are what improve the next plan.
+
+<Disclaimer>Illustrative example. Setpoints, limits and timings in this note are examples of the level of detail a plan needs, not recommended values for any particular site.</Disclaimer>
+
+## Further reading
+
+- [A building is not a battery](/field-notes/a-building-is-not-a-battery)
+- [How to verify what happened after a grid event](/field-notes/verifying-a-grid-event)
